@@ -336,7 +336,59 @@
         transition-duration: .01ms !important;
       }
     }
-  </style>
+  
+/* TEAL GREEN DYNAMIC BACKGROUND */
+html {
+  min-height: 100%;
+  background: #031d15;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background-color: transparent !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -35%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 20% 30%,
+      rgba(0,255,128,.28), transparent 42%),
+    radial-gradient(ellipse at 80% 25%,
+      rgba(0,180,100,.30), transparent 40%),
+    radial-gradient(ellipse at 65% 80%,
+      rgba(95,255,170,.22), transparent 43%),
+    linear-gradient(135deg,
+      #031d15, #075b38, #032d20, #087044, #031d15);
+  background-size: 150% 150%, 160% 160%, 150% 150%, 300% 300%;
+  animation: teal-green-flow 18s ease-in-out infinite alternate;
+}
+
+@keyframes teal-green-flow {
+  0% {
+    background-position: 0% 0%, 100% 0%, 50% 100%, 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%, 0% 100%, 80% 0%, 100% 50%;
+  }
+  100% {
+    background-position: 30% 100%, 80% 20%, 0% 50%, 0% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+}
+/* END TEAL GREEN DYNAMIC BACKGROUND */
+
+</style>
 </head>
 <body>
   <div class="page">
