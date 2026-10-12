@@ -609,6 +609,123 @@ body::before {
   50% { filter: brightness(1.25); }
 }
 
+
+/* TG INFO SECTION — independent of the existing particle animation */
+.tg-info-section {
+  box-sizing: border-box;
+  width: min(900px, calc(100% - 32px));
+  margin: 56px auto;
+  color: #d9f7e6;
+  font-family: inherit;
+}
+.tg-info-header {
+  text-align: center;
+  margin: 0 auto 28px;
+}
+.tg-info-eyebrow {
+  margin: 0 0 10px;
+  color: #86c9a5;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+.tg-info-header h2 {
+  margin: 0;
+  color: #baf3d9;
+  font-size: clamp(28px, 5vw, 38px);
+  line-height: 1.25;
+  letter-spacing: .4px;
+}
+.tg-info-divider {
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 16px auto 0;
+  border-radius: 2px;
+  background: #45e6a0;
+  box-shadow: 0 0 14px #45e6a055;
+}
+.tg-disclaimer-card {
+  padding: clamp(20px, 4vw, 32px);
+  border: 1px solid #287c58;
+  border-radius: 18px;
+  background: rgba(5, 35, 25, .78);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .16);
+}
+.tg-disclaimer-card h3 {
+  margin: 0 0 18px;
+  color: #baf3d9;
+  font-size: 19px;
+  line-height: 1.45;
+}
+.tg-disclaimer-card p {
+  margin: 0 0 15px;
+  color: #d1e7da;
+  font-size: 14px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.tg-disclaimer-card p:last-child { margin-bottom: 0; }
+.tg-community-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 30px 0 8px;
+  text-align: center;
+}
+.tg-community-heading {
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  padding: 12px 24px;
+  border: 1px solid #45e6a0;
+  border-radius: 12px;
+  color: #baf3d9;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+  box-shadow: 0 0 18px #20c87820;
+}
+.tg-community-copy {
+  max-width: 620px;
+  margin: 0;
+  color: #c3ddcf;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.tg-telegram-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 28px;
+  border: 1px solid #55e5a5;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #176344, #0b3d2b);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 22px #20c87830;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.tg-telegram-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px #20c87850;
+}
+.tg-brand-chinese {
+  margin: 6px 0 0;
+  color: #baf3d9;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+@media (max-width: 480px) {
+  .tg-info-section { width: calc(100% - 24px); margin: 38px auto; }
+  .tg-disclaimer-card { padding: 19px 16px; }
+  .tg-disclaimer-card p { font-size: 13px; line-height: 1.85; }
+  .tg-community-heading { font-size: 15px; padding: 10px 18px; }
+}
 </style>
 </head>
 <body>
@@ -741,66 +858,46 @@ body::before {
   </script>
 
 <!-- TG-TRANSPARENCY-START -->
-<section id="tg-transparency-community" style="
-  max-width:900px;margin:42px auto;padding:24px 18px;
-  text-align:center;color:#d9ffec;
-  font-family:Arial,sans-serif;">
-  <a href="#tg-transparency-detail" style="
-    display:inline-block;padding:12px 28px;margin:8px;
-    border:1px solid #45e6a0;border-radius:999px;
-    color:#baf3d9;text-decoration:none;font-weight:700;
-    letter-spacing:1px;box-shadow:0 0 18px #20c87830;">
-    Transparency
-  </a>
+<section id="tg-transparency-community" class="tg-info-section">
+  <header class="tg-info-header">
+    <p class="tg-info-eyebrow">TEAL GREEN · INDEPENDENT COMMUNITY</p>
+    <h2>Transparency</h2>
+    <span class="tg-info-divider"></span>
+  </header>
 
-  <div id="tg-transparency-detail" style="
-    margin:18px auto;padding:20px;
-    border:1px solid #287c58;border-radius:18px;
-    background:rgba(5,40,27,.65);text-align:left;
-    line-height:1.9;">
-    <h2 style="color:#baf3d9;text-align:center;margin-top:0">
-      Transparency &amp; Disclaimer
-    </h2>
+  <article id="tg-transparency-detail" class="tg-disclaimer-card">
+    <h3>Transparency &amp; Disclaimer</h3>
     <p>
-      This website is an independent community showcase for this product
-      and is provided for informational purposes only. It does not
-      constitute investment, financial, or legal advice, nor is it
-      affiliated with, endorsed by, or officially connected to Tether
-      or any other third-party institution. No independently verified
-      proof of reserves, audit reports, or verified token contract
-      information is provided on this page. Visitors should conduct
-      their own due diligence, verify all relevant information through
-      reliable and authoritative sources, and carefully assess the
-      risks before making any financial or digital-asset decisions.
-      Do not rely solely on the information presented here to determine
-      the authenticity, legitimacy, or security of any product or
-      digital asset.
+      This website is an independent community showcase provided for
+      informational purposes only. It does not constitute investment,
+      financial, or legal advice, nor is it affiliated with, endorsed by,
+      or officially connected to Tether or any other third-party institution.
     </p>
+    <p>
+      No independently verified proof of reserves, audit reports, or
+      verified token contract information is provided on this page.
+      Visitors should conduct their own due diligence, verify information
+      through reliable and authoritative sources, and carefully assess
+      the risks before making financial or digital-asset decisions.
+    </p>
+    <p>
+      Do not rely solely on this page to determine the authenticity,
+      legitimacy, or security of any product or digital asset.
+    </p>
+  </article>
+
+  <div class="tg-community-area">
+    <div class="tg-community-heading">Community | 加入社区</div>
+    <p class="tg-community-copy">
+      Join our Telegram community to exchange information.
+      Verify sources carefully and protect your account and digital assets.
+    </p>
+    <a class="tg-telegram-button"
+       href="https://t.me/TealGreenHub"
+       target="_blank"
+       rel="noopener noreferrer">Join Telegram <span aria-hidden="true">↗</span></a>
+    <p class="tg-brand-chinese">品牌方：黑 13 专享打造</p>
   </div>
-
-  <div style="margin:26px auto 14px">
-    <span style="
-      display:inline-block;padding:12px 24px;
-      border:1px solid #45e6a0;border-radius:12px;
-      color:#baf3d9;font-weight:700;
-      box-shadow:0 0 18px #20c87825;">
-      Community | Join the Community
-    </span>
-  </div>
-
-  <p style="line-height:1.8;color:#c5e9d7">
-    前往 Telegram 参与 Community 交流，注意核实信息来源并保护账户安全。
-  </p>
-
-  <a href="https://t.me/TealGreenHub" target="_blank"
-     rel="noopener noreferrer" style="
-    display:inline-block;margin-top:8px;padding:13px 30px;
-    border:1px solid #45e6a0;border-radius:999px;
-    background:linear-gradient(135deg,#0b6845,#123f30);
-    color:#fff;text-decoration:none;font-weight:700;
-    box-shadow:0 0 22px #20c87835;">
-    Join Telegram
-  </a>
 </section>
 <!-- TG-TRANSPARENCY-END -->
 
