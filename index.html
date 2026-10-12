@@ -1,290 +1,430 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Teal Green independent community project.">
-  <title>Teal Green | Community Project</title>
+  <meta name="theme-color" content="#06251b">
+  <meta name="description" content="Teal Green 独立社区项目，关注数字资产知识、透明信息与品质生活。">
+  <title>Teal Green | 黑 13 品牌</title>
   <style>
-  
-* {
-  box-sizing: border-box;
-}
+    :root {
+      color-scheme: dark;
+      --bg: #041810;
+      --panel: rgba(13, 55, 39, .78);
+      --green: #55e6a4;
+      --mint: #baf3d9;
+      --text: #effff6;
+      --muted: #a6c8b6;
+      --line: rgba(127, 235, 177, .2);
+    }
 
-:root {
-  color-scheme: light;
-  --deep-green: #103f35;
-  --teal: #087f68;
-  --mint: #baf3d9;
-  --text: #173c32;
-  --muted: #5b7168;
-}
+    * { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+                   "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(ellipse at 50% 18%, rgba(27, 133, 84, .32), transparent 48%),
+        radial-gradient(ellipse at 90% 80%, rgba(19, 91, 59, .22), transparent 38%),
+        linear-gradient(155deg, #092b1e 0%, #041810 48%, #020e09 100%);
+    }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background:
-    radial-gradient(ellipse at top right, #d7f5e8 0%, transparent 45%),
-    linear-gradient(180deg, #f5fbf7 0%, #eaf5ef 100%);
-  color: var(--text);
-  line-height: 1.7;
-}
+    a { color: inherit; text-decoration: none; }
 
-header {
-  background: linear-gradient(120deg, #103f35, #087f68);
-  color: white;
-  padding: 22px max(20px, calc((100% - 900px) / 2));
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  box-shadow: 0 8px 28px #103f3518;
-}
+    .page {
+      width: min(100% - 36px, 980px);
+      margin: 0 auto;
+    }
 
-.logo {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #baf3d9, #45d6a0);
-  color: #103f35;
-  display: grid;
-  place-items: center;
-  font-size: 26px;
-  font-weight: 800;
-  box-shadow: 0 4px 14px #00000018;
-}
+    header {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
 
-.brand {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.4px;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 750;
+      letter-spacing: .08em;
+    }
 
-.tag {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  color: #c5f4df;
-  margin-top: 3px;
-}
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: #062719;
+      font-size: 23px;
+      background: linear-gradient(145deg, #d8ffeb, #55d99b 55%, #15945c);
+      box-shadow: 0 0 25px rgba(85, 230, 164, .2);
+    }
 
-main {
-  width: min(100% - 32px, 760px);
-  margin: 0 auto;
-  padding: 48px 0 56px;
-}
+    .brand small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: .22em;
+    }
 
-main > p:first-child {
-  color: var(--teal);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
+    .nav-link {
+      color: var(--mint);
+      font-size: 13px;
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
 
-h1 {
-  font-size: clamp(38px, 8vw, 58px);
-  line-height: 1.1;
-  letter-spacing: -1.8px;
-  margin: 12px 0 18px;
-  color: var(--deep-green);
-}
+    main { padding: 70px 0 54px; text-align: center; }
 
-h2 {
-  font-size: 23px;
-  line-height: 1.3;
-  margin: 0 0 14px;
-  color: var(--deep-green);
-}
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--mint);
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: rgba(10, 46, 31, .65);
+    }
 
-h3 {
-  color: var(--deep-green);
-}
+    .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green);
+    }
 
-p {
-  color: var(--muted);
-  line-height: 1.8;
-}
+    h1 {
+      margin: 28px 0 12px;
+      font-size: clamp(36px, 8vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
 
-.panel {
-  background: rgba(255, 255, 255, 0.88);
-  padding: clamp(20px, 5vw, 32px);
-  border: 1px solid #dceee4;
-  border-radius: 22px;
-  margin-top: 24px;
-  box-shadow: 0 12px 34px #123d350b;
-}
+    h1 span {
+      display: block;
+      margin-top: 10px;
+      color: var(--green);
+      font-weight: 500;
+      font-size: .52em;
+      letter-spacing: .14em;
+    }
 
-.notice {
-  background: #e7f7ee;
-  border: 1px solid #c9ead9;
-  border-left: 4px solid var(--teal);
-  padding: 16px 18px;
-  border-radius: 12px;
-  font-size: 14px;
-  line-height: 1.8;
-}
+    .intro {
+      max-width: 580px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+    }
 
-.panel a[href*="t.me"] {
-  display: inline-block;
-  background: linear-gradient(135deg, #15966b, #087f68);
-  color: white;
-  padding: 13px 22px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 6px 16px #087f6828;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+    .coin-stage {
+      position: relative;
+      width: min(76vw, 310px);
+      aspect-ratio: 1;
+      margin: 42px auto 30px;
+      display: grid;
+      place-items: center;
+    }
 
-.panel a[href*="t.me"]:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 9px 22px #087f6835;
-}
+    .coin-stage::before, .coin-stage::after {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      border: 1px solid rgba(85, 230, 164, .13);
+      border-radius: 50%;
+      animation: rotate 24s linear infinite;
+    }
 
-.panel img {
-  display: block;
-  margin: 16px auto;
-  border: 1px solid #dceee4;
-}
+    .coin-stage::after {
+      inset: -2%;
+      border-style: dashed;
+      opacity: .55;
+      animation-direction: reverse;
+      animation-duration: 42s;
+    }
 
-footer {
-  text-align: center;
-  padding: 26px 20px;
-  font-size: 12px;
-  color: #60766c;
-  border-top: 1px solid #dceee4;
-  background: #f8fcf9;
-}
+    .coin {
+      position: relative;
+      width: 76%;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(207, 255, 229, .7);
+      background:
+        radial-gradient(circle at 30% 23%, rgba(225, 255, 239, .95), transparent 8%),
+        radial-gradient(circle at 32% 25%, #a5f6ca 0%, #39c985 17%, #08794b 48%, #06432e 72%, #031c13 100%);
+      box-shadow:
+        inset -13px -17px 28px rgba(0, 0, 0, .45),
+        inset 8px 8px 20px rgba(219, 255, 235, .22),
+        0 0 45px rgba(31, 198, 117, .23),
+        0 24px 55px rgba(0, 0, 0, .35);
+    }
 
-@media (max-width: 480px) {
-  header {
-    padding: 18px 16px;
-  }
+    .coin::before {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      border: 1px solid rgba(224, 255, 237, .38);
+      border-radius: 50%;
+    }
 
-  .brand {
-    font-size: 20px;
-  }
+    .coin-symbol {
+      color: #e6fff1;
+      font-family: Georgia, serif;
+      font-size: clamp(65px, 18vw, 105px);
+      font-weight: 700;
+      text-shadow: 0 3px 14px rgba(0, 20, 10, .5);
+    }
 
-  .tag {
-    font-size: 9px;
-    letter-spacing: 1px;
-  }
+    .coin-caption {
+      position: absolute;
+      bottom: 2px;
+      color: var(--mint);
+      font-size: 10px;
+      letter-spacing: .28em;
+    }
 
-  main {
-    width: calc(100% - 28px);
-    padding-top: 32px;
-  }
+    .usdt-button {
+      display: flex;
+      width: min(100%, 360px);
+      min-height: 76px;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      border: 1px solid rgba(195, 255, 221, .65);
+      border-radius: 18px;
+      color: #042719;
+      font-size: 29px;
+      font-weight: 850;
+      letter-spacing: .2em;
+      background: linear-gradient(120deg, #c8ffe1 0%, #65e8a9 48%, #25bd78 100%);
+      box-shadow: 0 10px 34px rgba(35, 201, 120, .2), inset 0 1px 0 #effff6;
+      transition: transform .2s, box-shadow .2s;
+    }
 
-  .panel {
-    margin-top: 20px;
-    border-radius: 18px;
-  }
+    .usdt-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(35, 201, 120, .3);
+    }
 
-  .panel a[href*="t.me"] {
-    max-width: 100%;
-    text-align: center;
-  }
-}.hero {
-  padding: 34px 0 24px;
-}
-.hero-label {
-  color: #087f68;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-.hero h1 span {
-  color: #087f68;
-}
-.hero-description {
-  max-width: 540px;
-  font-size: 17px;
-  line-height: 1.7;
-}
-.hero-button {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 14px 22px;
-  background: linear-gradient(135deg, #15966b, #087f68);
-  color: white;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700;
-}
-.hero-note {
-  margin-top: 18px;
-  font-size: 12px;
-}
+    .brand-note {
+      margin: 27px 0 0;
+      font-weight: 650;
+      letter-spacing: .08em;
+    }
+
+    .tagline {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+
+    .section {
+      margin: 26px 0;
+      padding: 28px;
+      text-align: left;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(145deg, var(--panel), rgba(4, 24, 16, .72));
+      box-shadow: 0 18px 45px rgba(0, 0, 0, .12);
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      color: var(--mint);
+      font-size: 19px;
+      letter-spacing: .04em;
+    }
+
+    .section p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      padding: 18px 14px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(2, 23, 15, .42);
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .feature span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .community {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .community-link {
+      flex-shrink: 0;
+      padding: 12px 17px;
+      color: #042719;
+      font-size: 13px;
+      font-weight: 750;
+      border-radius: 999px;
+      background: var(--green);
+    }
+
+    .disclaimer {
+      margin: 24px 0 0;
+      color: #789a87;
+      font-size: 11px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    footer {
+      padding: 25px 0 35px;
+      color: #789a87;
+      font-size: 11px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+
+    @keyframes rotate { to { transform: rotate(360deg); } }
+
+    @media (max-width: 560px) {
+      main { padding-top: 48px; }
+      .features { grid-template-columns: 1fr; }
+      .feature { padding: 15px; }
+      .section { padding: 22px; }
+      .community { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">T</div>
-    <div>
-      <div class="brand">Teal Green</div>
-      <div class="tag">INDEPENDENT COMMUNITY PROJECT</div>
-    </div>
-  </header>
-  <main>
-    <div class="hero">
-  <p class="hero-label">WELCOME TO OUR COMMUNITY</p>
-  <h1>Grow Together.<br><span>Stay Connected.</span></h1>
-  <p class="hero-description">
-    An independent community for sharing ideas,
-    connecting people, and growing together.
-  </p>
-  <a class="hero-button"
-     href="https://t.me/TealGreenHub"
-     target="_blank"
-     rel="noopener noreferrer">
-    ➤ Join our Telegram group
-  </a>
-  <p class="hero-note">
-    Independent project · Not affiliated with Tether or USDT
-  </p>
-</div>
-    <p>A community project focused on transparency, participation, and responsible development.</p>
-    <section class="panel">
-      <h2>About the Project</h2>
-      <p>Teal Green is an independent community project. Follow our official project channels for verified updates.</p>
-      <div class="notice">
-        Teal Green is not affiliated with Tether or USDT. It does not claim official endorsement, USD backing, or price stability.
+  <div class="page">
+    <header>
+      <a class="brand" href="#" aria-label="Teal Green 首页">
+        <span class="brand-mark" aria-hidden="true">希</span>
+        <span>TEAL GREEN<small>INDEPENDENT COMMUNITY</small></span>
+      </a>
+      <a class="nav-link" href="https://t.me/TETHERUSDT6" target="_blank" rel="noopener noreferrer">
+        Discussion Group
+      </a>
+    </header>
+
+    <main>
+      <div class="eyebrow">Green Digital Community</div>
+      <h1>TEAL GREEN<span>DIGITAL ASSET COMMUNITY</span></h1>
+      <p class="intro">
+        以绿色为灵感，关注数字资产知识、社区交流与信息透明。
+        通过清晰的信息展示，帮助访问者了解项目定位与相关风险。
+      </p>
+
+      <div class="coin-stage" aria-label="原创绿色徽章设计">
+        <div class="coin">
+          <span class="coin-symbol" aria-hidden="true">希</span>
+        </div>
+        <div class="coin-caption">TEAL GREEN · COMMUNITY</div>
+      </div>
+
+      <a class="usdt-button" href="https://t.me/TETHERUSDT6"
+         target="_blank" rel="noopener noreferrer" aria-label="进入 Telegram 社群">
+        USDT
+      </a>
+
+      <p class="brand-note">品牌方：黑 13 专享打造</p>
+      <p class="tagline">服务于品质，追求更高生活</p>
+    </main>
+
+    <section class="section">
+      <h2>About the Project｜项目介绍</h2>
+      <p>
+        Teal Green 是一个独立社区展示项目，致力于呈现清晰的品牌视觉、
+        数字资产相关知识与社区信息。页面中的绿色徽章为原创装饰设计，
+        不代表任何第三方机构的官方标识。
+      </p>
+      <div class="features">
+        <div class="feature">
+          <strong>清晰信息</strong>
+          <span>尽可能明确地区分项目介绍、公开信息与尚待核实的内容。</span>
+        </div>
+        <div class="feature">
+          <strong>社区交流</strong>
+          <span>通过 Telegram 社群了解讨论内容与项目动态。</span>
+        </div>
+        <div class="feature">
+          <strong>风险意识</strong>
+          <span>数字资产可能存在价格波动、技术和流动性等风险。</span>
+        </div>
       </div>
     </section>
-    
-<section class="panel">
-  <h2>Community</h2>
-  <p>Join the Teal Green community on Telegram.</p>
-  
-<p>
-  <a href="https://t.me/TealGreenHub"
-     target="_blank"
-     rel="noopener noreferrer"
-     style="display:inline-block;background:#15966b;color:white;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:bold;">
-    ➤ Join our Telegram group
-  </a>
-</p>
 
+    <section class="section">
+      <h2>Transparency｜透明度说明</h2>
+      <p>
+        本页面是独立社区展示页面，不构成投资建议，也不声称与 Tether
+        或其他第三方官方机构存在关联。页面未提供经过独立核实的储备证明、
+        审计结论或代币合约信息；请勿仅凭本页面判断资产真实性或安全性。
+      </p>
+    </section>
 
-<div style="text-align:center;margin-top:24px;">
-  <h3>Join Our Telegram Community</h3>
-  <p>Scan the QR code to join us.</p>
-  <img
-    src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Ft.me%2FTealGreenHub"
-    alt="Teal Green Telegram Community QR Code"
-    width="220"
-    height="220"
-    style="max-width:100%;height:auto;background:white;padding:10px;border-radius:12px;"
-  >
-  <p>Teal Green · Independent Community Project</p>
-</div>
+    <section class="section community">
+      <div>
+        <h2>Community｜加入社区</h2>
+        <p>前往 Telegram 参与社区交流，注意核实信息来源并保护账户安全。</p>
+      </div>
+      <a class="community-link" href="https://t.me/TETHERUSDT6"
+         target="_blank" rel="noopener noreferrer">进入 Telegram</a>
+    </section>
 
+    <p class="disclaimer">
+      风险提示：数字资产不保证收益。请自行核实项目、合约、发行主体及相关风险。
+      请勿向任何人透露钱包助记词、私钥或验证码。
+    </p>
 
-  </main>
-  <footer>Teal Green · Independent Community Project</footer>
+    <footer>© <span id="year"></span> Teal Green · Independent Community Project</footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
