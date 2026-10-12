@@ -551,6 +551,64 @@ body::before {
     }
     /* END premium navigation and demo asset panel */
 
+
+/* SCI-FI USDT ENERGY CORE */
+.coin-stage {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(55,255,164,.16), transparent 36%),
+    radial-gradient(circle, rgba(110,255,190,.95) 1px, transparent 2px),
+    radial-gradient(circle, rgba(25,255,140,.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(180,255,220,.7) 1px, transparent 2px);
+  background-size: 100% 100%, 17px 19px, 27px 31px, 39px 33px;
+  animation: tg-particle-drift 8s linear infinite;
+}
+.coin-stage::before,
+.coin-stage::after {
+  content: "";
+  position: absolute;
+  inset: 2%;
+  border: 1px solid rgba(95,255,177,.7);
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(40,255,150,.35);
+  pointer-events: none;
+  animation: tg-orbit 7s linear infinite;
+}
+.coin-stage::after {
+  inset: -7%;
+  border-style: dashed;
+  border-color: rgba(125,255,190,.65);
+  animation: tg-orbit 13s linear infinite reverse;
+}
+.coin {
+  animation: tg-core-pulse 3s ease-in-out infinite;
+  box-shadow: inset 0 0 28px rgba(190,255,220,.35),
+    0 0 25px rgba(35,255,145,.65),
+    0 0 60px rgba(20,220,120,.45),
+    0 0 100px rgba(20,220,120,.22);
+}
+.coin-symbol {
+  position: relative;
+  z-index: 2;
+  color: #effff6;
+  font-size: clamp(30px, 9vw, 48px);
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-shadow: 0 0 8px #65ffb2, 0 0 20px #20ed91,
+    0 0 38px rgba(30,255,145,.85);
+}
+@keyframes tg-particle-drift {
+  from { background-position: 0 0, 0 0, 12px 20px, 5px 10px; }
+  to { background-position: 0 0, 38px -46px, -42px 55px, 60px -35px; }
+}
+@keyframes tg-orbit {
+  from { transform: rotate(0deg) scaleX(1); }
+  to { transform: rotate(360deg) scaleX(1); }
+}
+@keyframes tg-core-pulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.25); }
+}
+
 </style>
 </head>
 <body>
@@ -582,7 +640,7 @@ body::before {
 
       <div class="coin-stage" aria-label="原创绿色徽章设计">
         <div class="coin">
-          <span class="coin-symbol" aria-hidden="true"><img src="assets/483BCAA4-B25A-4DD3-8F1D-908C63803CFA.jpeg" alt="Teal Green USDT 视觉图" style="width:100%;height:100%;object-fit:contain;border-radius:50%;"></span>
+          <span class="coin-symbol" aria-hidden="true">USDT</span>
         </div>
         <div class="coin-caption">TEAL GREEN · COMMUNITY</div>
       </div>
