@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06251b">
+  <meta name="description" content="Teal Green 独立Community项目，关注数字资产知识、透明信息与品质生活。">
+  <title>Teal Green | 黑 13 品牌</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #041810;
+      --panel: rgba(13, 55, 39, .78);
+      --green: #55e6a4;
+      --mint: #baf3d9;
+      --text: #effff6;
+      --muted: #a6c8b6;
+      --line: rgba(127, 235, 177, .2);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+                   "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(ellipse at 50% 18%, rgba(27, 133, 84, .32), transparent 48%),
+        radial-gradient(ellipse at 90% 80%, rgba(19, 91, 59, .22), transparent 38%),
+        linear-gradient(155deg, #092b1e 0%, #041810 48%, #020e09 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      width: min(100% - 36px, 980px);
+      margin: 0 auto;
+    }
+
+    header {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 750;
+      letter-spacing: .08em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: #062719;
+      font-size: 23px;
+      background: linear-gradient(145deg, #d8ffeb, #55d99b 55%, #15945c);
+      box-shadow: 0 0 25px rgba(85, 230, 164, .2);
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: .22em;
+    }
+
+    .nav-link {
+      color: var(--mint);
+      font-size: 13px;
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    main { padding: 70px 0 54px; text-align: center; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--mint);
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: rgba(10, 46, 31, .65);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green);
+    }
+
+    h1 {
+      margin: 28px 0 12px;
+      font-size: clamp(36px, 8vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 10px;
+      color: var(--green);
+      font-weight: 500;
+      font-size: .52em;
+      letter-spacing: .14em;
+    }
+
+    .intro {
+      max-width: 580px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+    }
+
+    .coin-stage {
+      position: relative;
+      width: min(76vw, 310px);
+      aspect-ratio: 1;
+      margin: 42px auto 30px;
+      display: grid;
+      place-items: center;
+    }
+
+    .coin-stage::before, .coin-stage::after {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      border: 1px solid rgba(85, 230, 164, .13);
+      border-radius: 50%;
+      animation: rotate 24s linear infinite;
+    }
+
+    .coin-stage::after {
+      inset: -2%;
+      border-style: dashed;
+      opacity: .55;
+      animation-direction: reverse;
+      animation-duration: 42s;
+    }
+
+    .coin {
+      position: relative;
+      width: 76%;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(207, 255, 229, .7);
+      background:
+        radial-gradient(circle at 30% 23%, rgba(225, 255, 239, .95), transparent 8%),
+        radial-gradient(circle at 32% 25%, #a5f6ca 0%, #39c985 17%, #08794b 48%, #06432e 72%, #031c13 100%);
+      box-shadow:
+        inset -13px -17px 28px rgba(0, 0, 0, .45),
+        inset 8px 8px 20px rgba(219, 255, 235, .22),
+        0 0 45px rgba(31, 198, 117, .23),
+        0 24px 55px rgba(0, 0, 0, .35);
+    }
+
+    .coin::before {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      border: 1px solid rgba(224, 255, 237, .38);
+      border-radius: 50%;
+    }
+
+    .coin-symbol {
+      color: #e6fff1;
+      font-family: Georgia, serif;
+      font-size: clamp(65px, 18vw, 105px);
+      font-weight: 700;
+      text-shadow: 0 3px 14px rgba(0, 20, 10, .5);
+    }
+
+    .coin-caption {
+      position: absolute;
+      bottom: 2px;
+      color: var(--mint);
+      font-size: 10px;
+      letter-spacing: .28em;
+    }
+
+    .usdt-button {
+      display: flex;
+      width: min(100%, 360px);
+      min-height: 76px;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      border: 1px solid rgba(195, 255, 221, .65);
+      border-radius: 18px;
+      color: #042719;
+      font-size: 29px;
+      font-weight: 850;
+      letter-spacing: .2em;
+      background: linear-gradient(120deg, #c8ffe1 0%, #65e8a9 48%, #25bd78 100%);
+      box-shadow: 0 10px 34px rgba(35, 201, 120, .2), inset 0 1px 0 #effff6;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .usdt-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(35, 201, 120, .3);
+    }
+
+    .brand-note {
+      margin: 27px 0 0;
+      font-weight: 650;
+      letter-spacing: .08em;
+    }
+
+    .tagline {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+
+    .section {
+      margin: 26px 0;
+      padding: 28px;
+      text-align: left;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(145deg, var(--panel), rgba(4, 24, 16, .72));
+      box-shadow: 0 18px 45px rgba(0, 0, 0, .12);
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      color: var(--mint);
+      font-size: 19px;
+      letter-spacing: .04em;
+    }
+
+    .section p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      padding: 18px 14px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(2, 23, 15, .42);
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .feature span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .community {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .community-link {
+      flex-shrink: 0;
+      padding: 12px 17px;
+      color: #042719;
+      font-size: 13px;
+      font-weight: 750;
+      border-radius: 999px;
+      background: var(--green);
+    }
+
+    .disclaimer {
+      margin: 24px 0 0;
+      color: #789a87;
+      font-size: 11px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    footer {
+      padding: 25px 0 35px;
+      color: #789a87;
+      font-size: 11px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+
+    @keyframes rotate { to { transform: rotate(360deg); } }
+
+    @media (max-width: 560px) {
+      main { padding-top: 48px; }
+      .features { grid-template-columns: 1fr; }
+      .feature { padding: 15px; }
+      .section { padding: 22px; }
+      .community { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  
+/* TEAL GREEN DYNAMIC BACKGROUND */
+html {
+  min-height: 100%;
+  background: #031d15;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background-color: transparent !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -35%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 20% 30%,
+      rgba(0,255,128,.28), transparent 42%),
+    radial-gradient(ellipse at 80% 25%,
+      rgba(0,180,100,.30), transparent 40%),
+    radial-gradient(ellipse at 65% 80%,
+      rgba(95,255,170,.22), transparent 43%),
+    linear-gradient(135deg,
+      #031d15, #075b38, #032d20, #087044, #031d15);
+  background-size: 150% 150%, 160% 160%, 150% 150%, 300% 300%;
+  animation: teal-green-flow 18s ease-in-out infinite alternate;
+}
+
+@keyframes teal-green-flow {
+  0% {
+    background-position: 0% 0%, 100% 0%, 50% 100%, 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%, 0% 100%, 80% 0%, 100% 50%;
+  }
+  100% {
+    background-position: 30% 100%, 80% 20%, 0% 50%, 0% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+}
+/* END TEAL GREEN DYNAMIC BACKGROUND */
+
+
+/* Teal Green original brand mark */
+.tg-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+  border: 1px solid #9af0bd;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #20a66a, #06452d);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  box-shadow: 0 0 18px rgba(65, 230, 140, .22);
+  vertical-align: middle;
+}
+
+
+    /* TEAL GREEN premium navigation and demo asset panel */
+    html { scroll-behavior: smooth; }
+    #home { scroll-margin-top: 24px; }
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .top-nav .nav-link {
+      padding: 9px 12px;
+      font-size: 11px;
+      white-space: nowrap;
+      transition: background .2s, border-color .2s;
+    }
+    .top-nav .nav-link:hover {
+      background: rgba(85,230,164,.12);
+      border-color: rgba(127,235,177,.55);
+    }
+    header { gap: 16px; }
+    .brand-mark {
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+    }
+    .intro-cn { margin-top: 10px; }
+    .asset-panel {
+      width: min(100%, 680px);
+      margin: 36px auto 0;
+      padding: 24px;
+      text-align: left;
+      border: 1px solid rgba(127,235,177,.28);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(7,55,36,.92), rgba(2,22,15,.94));
+      box-shadow: 0 20px 60px rgba(0,0,0,.22), inset 0 1px rgba(210,255,229,.06);
+      overflow: hidden;
+    }
+    .asset-heading, .chart-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .asset-kicker {
+      color: #8cebb9;
+      font-size: 9px;
+      letter-spacing: .18em;
+    }
+    .asset-heading h2 {
+      margin: 8px 0 0;
+      font-size: 20px;
+      letter-spacing: -.02em;
+    }
+    .demo-badge {
+      border: 1px solid rgba(126,245,177,.45);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: #a8f7c9;
+      font-size: 10px;
+      letter-spacing: .12em;
+    }
+    .asset-total {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 16px;
+      background: linear-gradient(120deg, rgba(28,132,81,.25), rgba(7,39,27,.45));
+      border: 1px solid rgba(127,235,177,.12);
+    }
+    .asset-total > span, .asset-total p {
+      color: #a6c8b6;
+      font-size: 12px;
+    }
+    .asset-total strong {
+      display: block;
+      margin-top: 10px;
+      color: #caffdf;
+      font-size: clamp(23px, 5.6vw, 36px);
+      letter-spacing: -.04em;
+      overflow-wrap: anywhere;
+    }
+    .asset-total strong small { font-size: .48em; letter-spacing: .05em; }
+    .asset-total p { margin: 10px 0 0; line-height: 1.7; }
+    .chart-title {
+      margin-top: 24px;
+      color: #d9ffea;
+      font-size: 12px;
+    }
+    .chart-status { color: #9acdb0; font-size: 10px; }
+    .chart-status i {
+      display: inline-block;
+      width: 6px; height: 6px;
+      margin-right: 5px;
+      border-radius: 50%;
+      background: #62e6a2;
+      box-shadow: 0 0 10px #62e6a2;
+    }
+    .asset-chart {
+      height: 128px;
+      display: flex;
+      align-items: flex-end;
+      gap: 7px;
+      margin-top: 14px;
+      padding: 12px 0 0;
+      border-bottom: 1px solid rgba(127,235,177,.2);
+      background: repeating-linear-gradient(to bottom, transparent 0, transparent 31px, rgba(127,235,177,.08) 32px);
+    }
+    .asset-chart span {
+      flex: 1;
+      min-width: 0;
+      height: var(--h);
+      border-radius: 5px 5px 0 0;
+      background: linear-gradient(180deg, #8fffc0 0%, #24ba76 58%, rgba(18,104,65,.55) 100%);
+      transform-origin: bottom;
+      animation: bar-breathe 2.8s ease-in-out infinite alternate;
+      animation-delay: calc(var(--h) * -18ms);
+      box-shadow: 0 0 12px rgba(50,221,137,.08);
+    }
+    @keyframes bar-breathe {
+      from { transform: scaleY(.78); opacity: .72; }
+      to { transform: scaleY(1); opacity: 1; }
+    }
+    .asset-disclaimer {
+      margin: 14px 0 0;
+      color: #8bac99;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+    .section h2 { line-height: 1.5; }
+    @media (max-width: 560px) {
+      header { align-items: flex-start; flex-direction: column; padding: 18px 0; }
+      .top-nav { width: 100%; justify-content: flex-start; gap: 6px; }
+      .top-nav .nav-link { padding: 8px 10px; font-size: 10px; }
+      .asset-panel { padding: 18px; border-radius: 19px; }
+      .asset-chart { gap: 4px; }
+      .asset-total { padding: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .asset-chart span { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+    /* END premium navigation and demo asset panel */
+
+
+/* SCI-FI USDT ENERGY CORE */
+.coin-stage {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(55,255,164,.16), transparent 36%),
+    radial-gradient(circle, rgba(110,255,190,.95) 1px, transparent 2px),
+    radial-gradient(circle, rgba(25,255,140,.8) 1px, transparent 2px),
+    radial-gradient(circle, rgba(180,255,220,.7) 1px, transparent 2px);
+  background-size: 100% 100%, 17px 19px, 27px 31px, 39px 33px;
+  animation: tg-particle-drift 8s linear infinite;
+}
+.coin-stage::before,
+.coin-stage::after {
+  content: "";
+  position: absolute;
+  inset: 2%;
+  border: 1px solid rgba(95,255,177,.7);
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(40,255,150,.35);
+  pointer-events: none;
+  animation: tg-orbit 7s linear infinite;
+}
+.coin-stage::after {
+  inset: -7%;
+  border-style: dashed;
+  border-color: rgba(125,255,190,.65);
+  animation: tg-orbit 13s linear infinite reverse;
+}
+.coin {
+  animation: tg-core-pulse 3s ease-in-out infinite;
+  box-shadow: inset 0 0 28px rgba(190,255,220,.35),
+    0 0 25px rgba(35,255,145,.65),
+    0 0 60px rgba(20,220,120,.45),
+    0 0 100px rgba(20,220,120,.22);
+}
+.coin-symbol {
+  position: relative;
+  z-index: 2;
+  color: #effff6;
+  font-size: clamp(30px, 9vw, 48px);
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-shadow: 0 0 8px #65ffb2, 0 0 20px #20ed91,
+    0 0 38px rgba(30,255,145,.85);
+}
+@keyframes tg-particle-drift {
+  from { background-position: 0 0, 0 0, 12px 20px, 5px 10px; }
+  to { background-position: 0 0, 38px -46px, -42px 55px, 60px -35px; }
+}
+@keyframes tg-orbit {
+  from { transform: rotate(0deg) scaleX(1); }
+  to { transform: rotate(360deg) scaleX(1); }
+}
+@keyframes tg-core-pulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.25); }
+}
+
+</style>
+</head>
+<body>
+  <div class="page" id="home">
+    <header>
+      <a class="brand" href="#" aria-label="Teal Green 首页">
+        <span class="brand-mark" aria-hidden="true"><span class="tg-brand-mark" role="img" aria-label="Teal Green 品牌图标">TG</span></span>
+        <span>TEAL GREEN<small>INDEPENDENT COMMUNITY</small></span>
+      </a>
+      <nav class="top-nav" aria-label="主导航">
+        <a class="nav-link" href="#home">Official Website</a>
+        <a class="nav-link" href="#asset-display">USDT</a>
+        <a class="nav-link" href="https://t.me/TETHERUSDT6" target="_blank" rel="noopener noreferrer">Discussion Group</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="eyebrow">INDEPENDENT DIGITAL COMMUNITY</div>
+      <h1>TEAL GREEN<span>TRACKING USDT MARKET TRENDS</span></h1>
+      <p class="intro">
+        Exploring today's financial landscape and bringing a fresh perspective
+        to the digital asset era. We focus on market insights, financial
+        innovation, transparent information and meaningful community exchange.
+      </p>
+      <p class="intro intro-cn">
+        关注 USDT 市场动向，分析当下金融布局，为新时代数字资产市场带来
+        不一样的视角。以品牌文化、理性认知和信息透明为核心，连接Community交流。
+      </p>
+
+      <div class="coin-stage" aria-label="原创绿色徽章设计">
+        <div class="coin">
+          <span class="coin-symbol" aria-hidden="true">USDT</span>
+        </div>
+        <div class="coin-caption">TEAL GREEN · COMMUNITY</div>
+      </div>
+
+      <a class="usdt-button" href="https://t.me/TETHERUSDT6"
+         target="_blank" rel="noopener noreferrer" aria-label="进入 Telegram 社群">
+        USDT
+      </a>
+
+      <p class="brand-note">品牌方：黑 13 专享打造</p>
+      <p class="tagline">Dedicated to Quality. Designed for Better Living.</p>
+
+      <section class="asset-panel" id="asset-display" aria-label="资产展示演示">
+        <div class="asset-heading">
+          <div>
+            <span class="asset-kicker">TEAL GREEN · MARKET DISPLAY</span>
+            <h2>USDT Asset Overview</h2>
+          </div>
+          <span class="demo-badge">DEMO</span>
+        </div>
+        <div class="asset-total">
+          <span>展示规模设定值</span>
+          <strong>1,000,000,000 <small>USDT</small></strong>
+          <p>演示数据 · 非经核实的实际资产或储备</p>
+        </div>
+        <div class="chart-title">
+          <span>Illustrative Market Activity</span>
+          <span class="chart-status"><i></i> 演示走势</span>
+        </div>
+        <div class="asset-chart" role="img" aria-label="动态演示柱状图，非实时资产数据">
+          <span style="--h:32%"></span><span style="--h:47%"></span>
+          <span style="--h:39%"></span><span style="--h:58%"></span>
+          <span style="--h:52%"></span><span style="--h:70%"></span>
+          <span style="--h:61%"></span><span style="--h:82%"></span>
+          <span style="--h:67%"></span><span style="--h:91%"></span>
+          <span style="--h:76%"></span><span style="--h:100%"></span>
+        </div>
+        <p class="asset-disclaimer">
+          本图表为前端视觉演示，不连接实时行情、钱包或储备数据。
+          实际资产情况须以可验证的公开来源为准。
+        </p>
+      </section>
+    </main>
+
+    <section class="section">
+      <h2>About the Project｜项目介绍</h2>
+      <p>
+        Teal Green 是一个以绿色美学与数字金融文化为灵感的独立Community展示项目。
+        我们关注 USDT 市场动态、金融生态变化、数字资产基础知识及Community观点，
+        希望以简洁直观的设计呈现信息，让访问者更容易理解市场概念与相关风险。
+        品牌强调理性、透明、品质和长期学习；市场内容仅用于信息交流，
+        不构成Investment Advice，也不代表对任何资产价值或收益的承诺。
+      </p>
+      <div class="features">
+        <div class="feature">
+          <strong>清晰信息</strong>
+          <span>尽可能明确地区分项目介绍、公开信息与尚待核实的内容。</span>
+        </div>
+        <div class="feature">
+          <strong>Community交流</strong>
+          <span>分享公开资讯、交流市场观察、讨论数字金融趋势，并鼓励成员核实来源、理性表达。</span>
+        </div>
+        <div class="feature">
+          <strong>风险意识</strong>
+          <span>不承诺收益；关注价格波动、流动性、技术与合约风险，任何信息都应独立核实。</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Transparency｜Transparency</h2>
+      <p>
+        本页面是独立Community展示页面，不构成Investment Advice，也不声称与 Tether
+        或其他第三方官方机构存在关联。页面未提供经过独立核实的储备证明、
+        审计结论或代币合约信息；请勿仅凭本页面判断资产真实性或安全性。
+      </p>
+    </section>
+
+    <section class="section community">
+      <div>
+        <h2>Community｜Join the Community</h2>
+        <p>前往 Telegram 参与Community交流，注意核实信息来源并保护账户安全。</p>
+      </div>
+      <a class="community-link" href="https://t.me/TETHERUSDT6"
+         target="_blank" rel="noopener noreferrer">进入 Telegram</a>
+    </section>
+
+    <p class="disclaimer">
+      风险提示：数字资产不保证收益。请自行核实项目、合约、发行主体及相关风险。
+      请勿向任何人透露钱包助记词、私钥或验证码。
+    </p>
+
+    <footer>© <span id="year"></span> Teal Green · Independent Community Project</footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+<!-- TG-TRANSPARENCY-START -->
+<section id="tg-transparency-community" style="
+  max-width:900px;margin:42px auto;padding:24px 18px;
+  text-align:center;color:#d9ffec;
+  font-family:Arial,sans-serif;">
+  <a href="#tg-transparency-detail" style="
+    display:inline-block;padding:12px 28px;margin:8px;
+    border:1px solid #45e6a0;border-radius:999px;
+    color:#baf3d9;text-decoration:none;font-weight:700;
+    letter-spacing:1px;box-shadow:0 0 18px #20c87830;">
+    Transparency
+  </a>
+
+  <div id="tg-transparency-detail" style="
+    margin:18px auto;padding:20px;
+    border:1px solid #287c58;border-radius:18px;
+    background:rgba(5,40,27,.65);text-align:left;
+    line-height:1.9;">
+    <h2 style="color:#baf3d9;text-align:center;margin-top:0">
+      Transparency
+    </h2>
+    <p>
+      本页面是独立 Community 展示页面，不构成 Investment Advice，
+      也不声称与 Tether 或其他第三方官方机构存在关联。
+      页面未提供经过独立核实的储备证明、审计结论或代币合约信息；
+      请勿仅凭本页面判断资产真实性或安全性。
+    </p>
+  </div>
+
+  <div style="margin:26px auto 14px">
+    <span style="
+      display:inline-block;padding:12px 24px;
+      border:1px solid #45e6a0;border-radius:12px;
+      color:#baf3d9;font-weight:700;
+      box-shadow:0 0 18px #20c87825;">
+      Community | 加入社区
+    </span>
+  </div>
+
+  <p style="line-height:1.8;color:#c5e9d7">
+    前往 Telegram 参与 Community 交流，注意核实信息来源并保护账户安全。
+  </p>
+
+  <a href="https://t.me/TealGreenHub" target="_blank"
+     rel="noopener noreferrer" style="
+    display:inline-block;margin-top:8px;padding:13px 30px;
+    border:1px solid #45e6a0;border-radius:999px;
+    background:linear-gradient(135deg,#0b6845,#123f30);
+    color:#fff;text-decoration:none;font-weight:700;
+    box-shadow:0 0 22px #20c87835;">
+    Join Telegram
+  </a>
+</section>
+<!-- TG-TRANSPARENCY-END -->
+
+</body>
+</html>
