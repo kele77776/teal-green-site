@@ -726,6 +726,268 @@ body::before {
   .tg-disclaimer-card p { font-size: 13px; line-height: 1.85; }
   .tg-community-heading { font-size: 15px; padding: 10px 18px; }
 }
+
+/* TG PREMIUM BRAND MODULE — independent of the existing USDT animation */
+.tg-info-section {
+  width: min(100% - 32px, 760px);
+  margin: 48px auto;
+  color: #e2ffed;
+  font-family: inherit;
+}
+.tg-section-title {
+  margin: 0 0 22px;
+  text-align: center;
+  font-size: clamp(25px, 5vw, 34px);
+  font-weight: 650;
+  letter-spacing: .07em;
+  color: #d9ffea;
+  text-shadow: 0 0 24px #27b87535;
+}
+.tg-disclosure, .tg-community-box {
+  padding: clamp(20px, 4vw, 30px);
+  border: 1px solid #23734b;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #0a2117eF, #04130dF5);
+  box-shadow: inset 0 1px #b6ffd00a, 0 12px 36px #00000020;
+}
+.tg-eyebrow {
+  display: block;
+  color: #79cba0;
+  font-size: 10px;
+  letter-spacing: .18em;
+  line-height: 1.8;
+}
+.tg-disclosure h3 {
+  margin: 10px 0 16px;
+  color: #d9ffea;
+  font-size: 19px;
+  font-weight: 600;
+}
+.tg-disclosure p, .tg-community-box p {
+  color: #b2cdbd;
+  font-size: 14px;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+.tg-brand-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+  margin: 22px 0;
+  padding: 22px clamp(16px, 4vw, 30px) 20px;
+  border: 1px solid #27764d;
+  border-radius: 24px;
+  color: inherit;
+  text-decoration: none;
+  background:
+    radial-gradient(ellipse at 50% 35%, #12623b40 0%, transparent 54%),
+    linear-gradient(145deg, #0a2117, #020d08 80%);
+  box-shadow: inset 0 1px #c0ffda10, 0 18px 48px #00000030;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.tg-brand-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -70%;
+  width: 45%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, #6dffb50b, transparent);
+  transform: skewX(-18deg);
+  animation: tg-card-sheen 7s ease-in-out infinite;
+}
+.tg-brand-card:hover {
+  border-color: #58d998;
+  box-shadow: 0 0 28px #23c87917, inset 0 1px #c0ffda15;
+  transform: translateY(-2px);
+}
+.tg-brand-topline {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #75b893;
+  font-size: 9px;
+  letter-spacing: .12em;
+}
+.tg-status { display: inline-flex; align-items: center; gap: 6px; }
+.tg-status i {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #67f0a7;
+  box-shadow: 0 0 10px #67f0a7;
+  animation: tg-status-pulse 2.4s ease-in-out infinite;
+}
+.tg-emblem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 156px;
+  height: 156px;
+  margin: 22px 0 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #12432a 0%, #06170e 61%, transparent 70%);
+}
+.tg-orbit {
+  position: absolute;
+  inset: 9px;
+  border: 1px solid #277b4e;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.tg-orbit-one {
+  border-color: #53dc94;
+  border-right-color: transparent;
+  border-bottom-color: #1b5d39;
+  animation: tg-orbit-spin 9s linear infinite;
+}
+.tg-orbit-two {
+  inset: 19px;
+  border-style: dashed;
+  border-color: #286c45;
+  animation: tg-orbit-spin 24s linear infinite reverse;
+}
+.tg-orbit-three {
+  inset: 1px;
+  border-color: #2a6543;
+  border-top-color: #b5ffd4;
+  border-bottom-color: transparent;
+  animation: tg-orbit-spin 14s linear infinite;
+}
+.tg-core {
+  display: grid;
+  place-items: center;
+  width: 86px;
+  height: 86px;
+  border: 1px solid #398e5d;
+  border-radius: 50%;
+  color: #e1ffed;
+  font-size: 37px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: radial-gradient(circle at 40% 30%, #174a30, #04130b 75%);
+  box-shadow: 0 0 30px #21ba6d20, inset 0 0 20px #37b87516;
+  animation: tg-core-breathe 4s ease-in-out infinite;
+}
+.tg-particle {
+  position: absolute;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: #a9ffd0;
+  box-shadow: 0 0 10px 2px #45e99370;
+}
+.tg-particle-one { top: 17px; left: 48px; animation: tg-particle-float 4s ease-in-out infinite; }
+.tg-particle-two { top: 53px; right: 8px; animation: tg-particle-float 5s ease-in-out infinite reverse; }
+.tg-particle-three { bottom: 19px; left: 36px; animation: tg-particle-float 4.5s ease-in-out infinite; }
+.tg-particle-four { bottom: 36px; right: 22px; animation: tg-particle-float 3.8s ease-in-out infinite reverse; }
+.tg-brand-name {
+  color: #e1ffed;
+  font-size: clamp(23px, 5vw, 29px);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-align: center;
+}
+.tg-brand-subtitle {
+  margin-top: 9px;
+  color: #78c59b;
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-align: center;
+}
+.tg-brand-divider {
+  width: 100%;
+  height: 1px;
+  margin: 22px 0 16px;
+  background: linear-gradient(90deg, transparent, #286b45, #5acb8c, #286b45, transparent);
+}
+.tg-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #245d3d;
+  border-radius: 15px;
+  background: #0a2519b8;
+}
+.tg-telegram-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #276b47;
+  border-radius: 12px;
+  color: #a5ffd0;
+  background: #103c27;
+}
+.tg-telegram-icon svg, .tg-join-button svg { width: 19px; height: 19px; }
+.tg-profile-copy { display: flex; flex: 1; flex-direction: column; gap: 5px; min-width: 0; }
+.tg-profile-copy span { color: #77b995; font-size: 9px; letter-spacing: .09em; }
+.tg-profile-copy strong { color: #e3ffed; font-size: 16px; font-weight: 600; overflow-wrap: anywhere; }
+.tg-external-icon { color: #85e9b2; font-size: 23px; }
+.tg-card-hint { margin-top: 13px; color: #659b7b; font-size: 9px; letter-spacing: .13em; }
+.tg-community-box { text-align: center; }
+.tg-community-box h2 {
+  margin: 8px 0 12px;
+  color: #dffff0;
+  font-size: clamp(21px, 4vw, 26px);
+}
+.tg-community-box p { max-width: 560px; margin: 0 auto 22px; }
+.tg-join-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 20px;
+  border: 1px solid #6af0ac;
+  border-radius: 999px;
+  color: #042113;
+  background: linear-gradient(110deg, #79f0b2, #31c77e 55%, #8bffc2);
+  box-shadow: 0 0 24px #26c97b20, inset 0 1px #e5fff0a0;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.tg-join-button:hover { transform: translateY(-2px); box-shadow: 0 0 30px #26c97b35; }
+.tg-join-button svg { width: 18px; height: 18px; }
+@keyframes tg-orbit-spin { to { transform: rotate(360deg); } }
+@keyframes tg-core-breathe {
+  0%, 100% { box-shadow: 0 0 22px #21ba6d18, inset 0 0 18px #37b87510; }
+  50% { box-shadow: 0 0 34px #21ba6d38, inset 0 0 22px #37b87524; }
+}
+@keyframes tg-particle-float {
+  0%, 100% { transform: translate3d(0,0,0); opacity: .5; }
+  50% { transform: translate3d(3px,-7px,0); opacity: 1; }
+}
+@keyframes tg-status-pulse { 0%,100% { opacity: .65; } 50% { opacity: 1; } }
+@keyframes tg-card-sheen {
+  0%, 65% { left: -70%; }
+  100% { left: 130%; }
+}
+@media (max-width: 480px) {
+  .tg-info-section { width: calc(100% - 24px); margin: 32px auto; }
+  .tg-brand-card { border-radius: 20px; }
+  .tg-emblem { width: 142px; height: 142px; }
+  .tg-core { width: 80px; height: 80px; }
+  .tg-profile-row { padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tg-orbit, .tg-core, .tg-particle, .tg-status i, .tg-brand-card::before {
+    animation: none !important;
+  }
+  .tg-brand-card, .tg-join-button { transition: none; }
+}
+
 </style>
 </head>
 <body>
@@ -858,46 +1120,70 @@ body::before {
   </script>
 
 <!-- TG-TRANSPARENCY-START -->
-<section id="tg-transparency-community" class="tg-info-section">
-  <header class="tg-info-header">
-    <p class="tg-info-eyebrow">TEAL GREEN · INDEPENDENT COMMUNITY</p>
-    <h2>Transparency</h2>
-    <span class="tg-info-divider"></span>
-  </header>
+<section class="tg-info-section" aria-label="Transparency and community">
+  <h2 class="tg-section-title">Transparency</h2>
 
-  <article id="tg-transparency-detail" class="tg-disclaimer-card">
-    <h3>Transparency &amp; Disclaimer</h3>
-    <p>
-      This website is an independent community showcase provided for
-      informational purposes only. It does not constitute investment,
-      financial, or legal advice, nor is it affiliated with, endorsed by,
-      or officially connected to Tether or any other third-party institution.
-    </p>
-    <p>
-      No independently verified proof of reserves, audit reports, or
-      verified token contract information is provided on this page.
-      Visitors should conduct their own due diligence, verify information
-      through reliable and authoritative sources, and carefully assess
-      the risks before making financial or digital-asset decisions.
-    </p>
-    <p>
-      Do not rely solely on this page to determine the authenticity,
-      legitimacy, or security of any product or digital asset.
-    </p>
+  <article class="tg-disclosure">
+    <span class="tg-eyebrow">TRANSPARENCY &amp; DISCLOSURE</span>
+    <h3>Independent Community Showcase</h3>
+    <p>This website is an independent community showcase. It does not constitute investment, financial, or legal advice, and is not affiliated with, endorsed by, or officially connected to Tether or any other third-party institution.</p>
+    <p>This page does not provide independently verified proof of reserves, audit reports, or verified token contract information.</p>
+    <p>Do not rely solely on this page to determine the authenticity, legitimacy, or security of any digital asset. Verify information through reliable sources and carefully assess the risks.</p>
   </article>
 
-  <div class="tg-community-area">
-    <div class="tg-community-heading">Community | 加入社区</div>
-    <p class="tg-community-copy">
-      Join our Telegram community to exchange information.
-      Verify sources carefully and protect your account and digital assets.
-    </p>
-    <a class="tg-telegram-button"
+  <a class="tg-brand-card"
+     href="https://t.me/kele77776"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Open the Telegram profile for 黑 13">
+    <span class="tg-brand-topline">
+      <span>TEAL GREEN · BRAND ACCESS</span>
+      <span class="tg-status"><i></i> CONNECT</span>
+    </span>
+
+    <span class="tg-emblem" aria-hidden="true">
+      <span class="tg-orbit tg-orbit-one"></span>
+      <span class="tg-orbit tg-orbit-two"></span>
+      <span class="tg-orbit tg-orbit-three"></span>
+      <span class="tg-core">13</span>
+      <span class="tg-particle tg-particle-one"></span>
+      <span class="tg-particle tg-particle-two"></span>
+      <span class="tg-particle tg-particle-three"></span>
+      <span class="tg-particle tg-particle-four"></span>
+    </span>
+
+    <span class="tg-brand-name">交易认准黑 13</span>
+    <span class="tg-brand-subtitle">EXCLUSIVE COMMUNITY CONTACT</span>
+    <span class="tg-brand-divider"></span>
+
+    <span class="tg-profile-row">
+      <span class="tg-telegram-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21.5 3.6 18.3 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.7 13.5.8 12c-1.1-.3-1.1-1 .2-1.5L20 3.1c.9-.3 1.7.2 1.5.5Z"/>
+        </svg>
+      </span>
+      <span class="tg-profile-copy">
+        <span>TELEGRAM PERSONAL CARD</span>
+        <strong>@kele77776</strong>
+      </span>
+      <span class="tg-external-icon" aria-hidden="true">↗</span>
+    </span>
+    <span class="tg-card-hint">TAP TO OPEN TELEGRAM PROFILE</span>
+  </a>
+
+  <section class="tg-community-box" aria-label="Community">
+    <span class="tg-eyebrow">STAY CONNECTED</span>
+    <h2>Community | 加入社区</h2>
+    <p>Join our Telegram community to exchange information. Verify sources carefully and protect your account.</p>
+    <a class="tg-join-button"
        href="https://t.me/TealGreenHub"
-       target="_blank"
-       rel="noopener noreferrer">Join Telegram <span aria-hidden="true">↗</span></a>
-    <p class="tg-brand-chinese">品牌方：黑 13 专享打造</p>
-  </div>
+       target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M21.5 3.6 18.3 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.7 13.5.8 12c-1.1-.3-1.1-1 .2-1.5L20 3.1c.9-.3 1.7.2 1.5.5Z"/>
+      </svg>
+      <span>Join Telegram</span>
+      <span aria-hidden="true">↗</span>
+    </a>
+  </section>
 </section>
 <!-- TG-TRANSPARENCY-END -->
 
